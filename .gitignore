@@ -102,3 +102,4 @@ tests/window
 tests/windows
 
 bin
+bin-int/
