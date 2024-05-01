@@ -261,16 +261,6 @@ static const NSRange kEmptyRange = { NSNotFound, 0 };
         window->ns.height = contentRect.size.height;
         _glfwInputWindowSize(window, contentRect.size.width, contentRect.size.height);
     }
-
-    // MARK: Set by VWolf Apr 26th
-    const NSRect currentContentRect = ((NSWindow*)notification.object).contentView.frame;
-    if (currentContentRect.size.width != window->ns.width ||
-        currentContentRect.size.height != window->ns.height)
-    {
-        window->ns.width  = currentContentRect.size.width;
-        window->ns.height = currentContentRect.size.height;
-        _glfwInputWindowSize(window, currentContentRect.size.width, currentContentRect.size.height);
-    }
 }
 
 - (void)windowDidMove:(NSNotification *)notification
